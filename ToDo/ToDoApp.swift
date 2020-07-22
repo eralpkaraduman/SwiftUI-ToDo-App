@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct ToDoApp: App {
+    var toDo = DataManager(items: [
+        ToDoItem(text: "Buy Milk", completed: true),
+        ToDoItem(text: "Buy Bread", completed: false),
+        ToDoItem(text: "Buy Banana", completed: false),
+        ToDoItem(text: "Buy Beer", completed: false)
+    ])
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(toDo)
         }
     }
 }
