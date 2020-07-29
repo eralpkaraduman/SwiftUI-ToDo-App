@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5373021924D2075200C7B361 /* NewToDoInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5373021824D2075200C7B361 /* NewToDoInputCell.swift */; };
+		5373021E24D2111100C7B361 /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = 5373021D24D2111100C7B361 /* Introspect */; };
 		539A682524BF94770037CDBB /* ToDoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539A682424BF94770037CDBB /* ToDoApp.swift */; };
 		539A682724BF94770037CDBB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539A682624BF94770037CDBB /* ContentView.swift */; };
 		539A682924BF94780037CDBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 539A682824BF94780037CDBB /* Assets.xcassets */; };
@@ -18,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5373021824D2075200C7B361 /* NewToDoInputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewToDoInputCell.swift; sourceTree = "<group>"; };
 		539A682124BF94770037CDBB /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		539A682424BF94770037CDBB /* ToDoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoApp.swift; sourceTree = "<group>"; };
 		539A682624BF94770037CDBB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -35,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5373021E24D2111100C7B361 /* Introspect in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +68,7 @@
 				539A682624BF94770037CDBB /* ContentView.swift */,
 				53AD678924C8D9F3005CE048 /* DataManager.swift */,
 				53AD678B24C8ED5E005CE048 /* Cell.swift */,
+				5373021824D2075200C7B361 /* NewToDoInputCell.swift */,
 				53AD678D24C8EE68005CE048 /* AddToDoSheetContentView.swift */,
 				53AD678F24C8EE95005CE048 /* TodoListView.swift */,
 				539A682824BF94780037CDBB /* Assets.xcassets */,
@@ -97,6 +102,9 @@
 			dependencies = (
 			);
 			name = ToDo;
+			packageProductDependencies = (
+				5373021D24D2111100C7B361 /* Introspect */,
+			);
 			productName = ToDo;
 			productReference = 539A682124BF94770037CDBB /* ToDo.app */;
 			productType = "com.apple.product-type.application";
@@ -124,6 +132,9 @@
 				Base,
 			);
 			mainGroup = 539A681824BF94770037CDBB;
+			packageReferences = (
+				5373021C24D2111100C7B361 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
+			);
 			productRefGroup = 539A682224BF94770037CDBB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -155,6 +166,7 @@
 				53AD679024C8EE95005CE048 /* TodoListView.swift in Sources */,
 				53AD678C24C8ED5E005CE048 /* Cell.swift in Sources */,
 				539A682724BF94770037CDBB /* ContentView.swift in Sources */,
+				5373021924D2075200C7B361 /* NewToDoInputCell.swift in Sources */,
 				539A682524BF94770037CDBB /* ToDoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,6 +354,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5373021C24D2111100C7B361 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5373021D24D2111100C7B361 /* Introspect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5373021C24D2111100C7B361 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
+			productName = Introspect;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 539A681924BF94770037CDBB /* Project object */;
 }

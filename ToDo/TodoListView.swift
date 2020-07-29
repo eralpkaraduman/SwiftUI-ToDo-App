@@ -9,12 +9,48 @@ import SwiftUI
 
 struct TodoListView: View {
     @EnvironmentObject var dataManager: DataManager
+    @State var addMode = false
 
     var body: some View {
         List() {
-            ForEach(dataManager.items) { item in
-                Cell(item: item)
-            }.onDelete(perform: dataManager.remove)
-        }
+            Section{
+                ForEach(dataManager.items) { item in
+                    Cell(item: item)
+                }.onDelete(perform: dataManager.remove)
+            }
+            if addMode {
+                Section {
+                    NewToDoInputCell { title in
+                        addMode.toggle()
+                        if title.isEmpty {
+                            return
+                        }
+                        dataManager.add(
+                            item: ToDoItem(text: title, completed: false)
+                        )
+                    }
+                }
+            }
+        }.listStyle(PlainListStyle())
+        .navigationTitle("TO DO")
+        .navigationBarItems(trailing:
+            Button(action: {
+                self.addMode.toggle()
+            }, label: {
+                Text("Add")
+            }).disabled(addMode)
+        )
+    }
+}
+
+struct TodoListView_Previews: PreviewProvider {
+    static let dataManager = DataManager(items: [
+        ToDoItem(text: "Buy Milk", completed: true),
+        ToDoItem(text: "Buy Bread", completed: false),
+        ToDoItem(text: "Buy Banana", completed: false),
+        ToDoItem(text: "Buy Beer", completed: false)
+    ])
+    static var previews: some View {
+        TodoListView().environmentObject(dataManager)
     }
 }

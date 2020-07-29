@@ -12,7 +12,7 @@ struct Cell: View {
     
     var body: some View {
         HStack(content: {
-            Text(item.text) // TODO: Strikethrough if completed
+            Text(item.text).strikethrough(item.completed)
             Spacer()
             Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/ ) {
                 Image(systemName: item.completed ?
