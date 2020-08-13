@@ -49,6 +49,7 @@ class DataManager: ObservableObject {
         }
 
         items.remove(atOffsets: indexSet)
+
         try? moc.save()
     }
 }
