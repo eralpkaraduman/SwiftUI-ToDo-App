@@ -10,10 +10,10 @@ import CoreData
 
 @main
 struct ToDoApp: App {
-    var toDo = DataManager()
+    var manager = CoreDataManager()
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(toDo)
+            ContentView().environmentObject(manager) // 🌸
         }
     }
 }

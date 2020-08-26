@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct Cell: View {
-    @State var item: ToDoItem
-    
+    @State var item: ToDoEntity
+
+    var toggleCompletion: () -> Void
+
     var body: some View {
         HStack(content: {
-            Text(item.text).strikethrough(item.completed)
+            Text(item.text!).strikethrough(item.completed)
             Spacer()
             Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/ ) {
                 Image(systemName: item.completed ?
@@ -21,14 +23,14 @@ struct Cell: View {
                 )
             }.onTapGesture
             {
-                item.completed.toggle()
+                self.toggleCompletion()
             }
         })
     }
 }
 
-struct Cell_Previews: PreviewProvider {
-    static var previews: some View {
-        Cell(item: ToDoItem(text: "Test", completed: false))
-    }
-}
+//struct Cell_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Cell(item: ToDoItem(text: "Test", completed: false))
+//    }
+//}

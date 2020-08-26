@@ -9,8 +9,8 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    @EnvironmentObject var dataManager: DataManager
-    
+    @EnvironmentObject var dataManager: CoreDataManager
+
     var body: some View {
         NavigationView {
             TodoListView().environmentObject(dataManager)
@@ -18,9 +18,9 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static let dataManager = DataManager()
-    static var previews: some View {
-        ContentView().environmentObject(dataManager)
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static let dataManager = DataManager()
+//    static var previews: some View {
+//        ContentView().environmentObject(dataManager)
+//    }
+//}
